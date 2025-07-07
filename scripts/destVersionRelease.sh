@@ -127,8 +127,6 @@ function main() {
 
     gh release create v$dest_version ./WeChatWin/$dest_version/WeChatWin-$dest_version.exe -F ./WeChatWin/$dest_version/WeChatWin-$dest_version.exe.sha256 -t "Wechat v$dest_version"
 
-    gh auth logout --hostname github.com | echo "y"
-
     clean_data 0
 }
 
