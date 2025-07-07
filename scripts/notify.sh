@@ -25,13 +25,13 @@ function login_gh() {
     printf "#%.0s" {1..60}
     echo 
 
-    echo $GHTOKEN > WeChatSetup/temp/GHTOKEN
-    gh auth login --with-token < WeChatSetup/temp/GHTOKEN
+    echo $GHTOKEN > WeChatWin/temp/GHTOKEN
+    gh auth login --with-token < WeChatWin/temp/GHTOKEN
     if [ "$?" -ne 0 ]; then
         >&2 echo -e "\033[1;31mLogin Failed, please check your network or token!\033[0m"
         clean_data 1
     fi
-    rm -rfv WeChatSetup/temp/GHTOKEN
+    rm -rfv WeChatWin/temp/GHTOKEN
 }
 
 ### https://kodango.com/sed-and-awk-notes-part-5
@@ -53,12 +53,12 @@ function clean_data() {
     printf "#%.0s" {1..60}
     echo 
 
-    rm -rfv WeChatSetup/*
+    rm -rfv WeChatWin/*
     exit $1
 }
 
 function main() {
-    temp_path="WeChatSetup/temp"
+    temp_path="WeChatWin/temp"
     mkdir -p ${temp_path}
 
     login_gh
