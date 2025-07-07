@@ -19,5 +19,5 @@ jobs:
       #   run: echo `date`
       - name: Check new version and push
         env: 
-          GHTOKEN: ${{ secrets.GHTOKEN }}
+          GH_TOKEN: ${{ secrets.GHTOKEN }}
         run: bash -x ./scripts/destVersionRelease.sh ${{ github.event.inputs.download_link }}
