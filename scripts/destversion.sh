@@ -21,7 +21,7 @@ function download_wechat() {
     echo -e "## \033[1;33mDownloading the newest WechatSetup...\033[0m"
     printf "#%.0s" {1..60}
     echo 
-    wget https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe -O ${temp_path}/WeChatSetup.exe
+    wget https://dldir1v6.qq.com/weixin/Universal/Windows/WeChatWin.exe -O ${temp_path}/WeChatSetup.exe
     if [ "$?" -ne 0 ]; then
         >&2 echo -e "\033[1;31mDownload Failed, please check your network!\033[0m"
         exit 1
